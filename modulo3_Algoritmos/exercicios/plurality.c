@@ -2,22 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-
 #define MAX 9
-
 
 typedef struct
 {
     string name;
     int votes;
-}
-candidate;
+} candidate;
 
 candidate candidates[MAX];
 
-
 int candidate_count;
-
 
 bool vote(string name);
 void print_winner(void);
@@ -30,7 +25,6 @@ int main(int argc, string argv[])
         printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
-
 
     candidate_count = argc - 1;
     if (candidate_count > MAX)
@@ -46,11 +40,9 @@ int main(int argc, string argv[])
 
     int voter_count = get_int("Number of voters: ");
 
-
     for (int i = 0; i < voter_count; i++)
     {
         string name = get_string("Vote: ");
-
 
         if (!vote(name))
         {
@@ -65,28 +57,41 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    for(int i=0;i<candidate_count;i++){
-       if(strcmp(candidates[i].name,name)==0){
-          candidates[i].votes++;
-           return true;
-       }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            candidates[i].votes++;
+            return 1;
+        }
     }
-    return false;
+    return 0;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-candidate candidateAposApuracao[candidate_count];
-
-     for(int i=0;i<candidate_count-1;i++){
-       
-     }
-    
-    
-    for(int i=0;i<candidate_count;i++){
-      printf("Candidato: %s\n Votos: %d\n",candidates[i].name,candidates[i].votes);
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int n = 0; n < candidate_count; n++)
+        {
+            if (candidates[i].votes > candidates[n].votes)
+            {
+                candidate par = candidates[n];
+                candidates[n] = candidates[i];
+                candidates[i] = par;
+            }
+        }
     }
-    return;
-}
+    printf("%s\n", candidates[0].name);
+    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[0].votes == candidates[i].votes && candidates[0].name != candidates[i].name)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
 
+    
+}

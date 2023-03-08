@@ -1,9 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
+
+int funcao(int i);
 int main(void)
 {
+
+  int u=get_int("Digite qualquer numero:\n");
+  funcao(u);
 
   /*int A=3;
 int B=2;
@@ -47,6 +53,7 @@ printf("C: %d\n",A);
 
 
 */
+/*
 
   int array[] = {10, 8, 9, 5, 6, 7, 4, 2, 1, 3};
 
@@ -71,7 +78,6 @@ printf("C: %d\n",A);
       }
     }
   }
-
   printf("Ordenacao do menor para o maior \n");
   for (int i = 0; i < 10; i++)
   {
@@ -97,4 +103,14 @@ printf("C: %d\n",A);
   {
     printf("%d\n", array[i]);
   }
+*/
+
+
+
+
+}
+
+int funcao(int i){
+   int d=i/2;
+   printf("%d\n",d);
 }
