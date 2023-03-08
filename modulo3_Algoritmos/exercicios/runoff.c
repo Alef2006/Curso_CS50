@@ -94,6 +94,7 @@ int main(int argc, string argv[])
         
         bool won = print_winner();
         if (won)
+
         {
             break;
         }
@@ -176,21 +177,57 @@ bool print_winner(void)
 
 int find_min(void)
 {
+    int arrayVotes[candidate_count];
+
+    for (int i = 0; i < candidate_count; i++){
+    if(candidates[i].eliminated==false){
+     arrayVotes[i]=candidates[i].votes;
+    } 
+  }
+  for (int i = 0; i < candidate_count; i++)
+  {
+
+    for (int t = 0; t < candidate_count; t++)
+    {
+      if (arrayVotes[i] <arrayVotes[t])
+      {
+        int n = arrayVotes[i];
+        arrayVotes[i] = arrayVotes[t];
+        arrayVotes[t] = n;
+      }
+    }
+  }
+
+  int number=arrayVotes[0];
     
-    return 0;
+    return number;
 }
 
 
 bool is_tie(int min)
 {
- 
+    int count=0;
+    for(int i =0;i<candidate_count-1;i++){
+      if (candidates[i].eliminated==false){
+       if(candidates[i].votes==min){
+       count=count+1;
+       }
+      }
+    }
+    if(count==candidate_count){
+      return true;
+    }
     return false;
 }
 
 
 void eliminate(int min)
 {
-    
+    for(int i=0;i<candidate_count;i++){
+       if(candidates[i].votes==min){
+           candidates[i].eliminated=true;
+       }
+    }
     return;
 }
 
