@@ -11,6 +11,9 @@ int main(void)
   int u=get_int("Digite qualquer numero:\n");
   funcao(u);
 
+
+ // string array[10];
+
   /*int A=3;
 int B=2;
 int C=1;
@@ -53,11 +56,12 @@ printf("C: %d\n",A);
 
 
 */
-/*
 
-  int array[] = {10, 8, 9, 5, 6, 7, 4, 2, 1, 3};
 
-  printf("Nao ordenado\n");
+ // int array[] = {10, 8, 9, 5, 6, 7, 4, 2, 1, 3};
+
+ // printf("Nao ordenado\n");
+  /*
   for (int i = 0; i < 10; i++)
   {
     printf("%d\n", array[i]);
@@ -103,10 +107,16 @@ printf("C: %d\n",A);
   {
     printf("%d\n", array[i]);
   }
+
+
+
+
 */
-
-
-
+/*
+for(int i=0;i<10;i++){
+  printf("%s\n,",array[i]);
+}
+*/
 
 }
 
