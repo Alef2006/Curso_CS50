@@ -1,0 +1,21 @@
+ul{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.col-projeto h1{
+    margin-bottom: 30px;
+}
+ 
+.col-projeto ul li:hover{
+    transform: scale(1.02);
+    color: blueviolet;
+}
+.col-projeto ul li{
+    font-size: larger;
+    transition: 0.2s ease-in-out;
+}

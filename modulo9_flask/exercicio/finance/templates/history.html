@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Numbers shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action type</th>
+      <th scope="col">Action data</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for item in history%}
+    <tr>
+      <td>{{item.share_name}}</td>
+      <td>{{item.share_symbol}}</td>
+      <td>{{item.number_shares}}</td>
+      <td>{{item.share_price}}</td>
+      <td>{{item.action_type}}</td>
+      <td>{{item.action_data}}</td>
+     
+    </tr>
+    {%endfor%}
+
+
+  </tbody>
+</table>
+{% endblock %}

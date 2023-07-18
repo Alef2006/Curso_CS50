@@ -1,0 +1,14 @@
+.opcao-menu a{
+    transition: 0.2s ease-in-out;
+}
+
+.opcao-menu a:hover{
+    transform: scale(1.02);
+    color: blueviolet;
+}
+
+
+.opcao-menu .activate{
+    color:blueviolet;
+    transform: scale(1.05);
+}

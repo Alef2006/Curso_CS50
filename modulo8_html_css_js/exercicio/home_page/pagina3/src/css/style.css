@@ -1,0 +1,16 @@
+.imagem-projeto{
+    height: 200px;
+}
+
+.card-projeto{
+    transition: 0.2s ease-in-out;
+}
+
+.card-projeto:hover{
+    transform: scale(1.02);
+    background-color: rgb(86, 3, 109);
+}
+
+.container .row{
+    gap: 30px;
+}
